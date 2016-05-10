@@ -4,7 +4,8 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "modernizr": "~2.8.1",
-    "angular": "^1.5.5"
+    "angular": "^1.5.5",
+    "angular-route": "^1.5.5"
   },
   "devDependencies": {
     "chai": "^3.5.0",

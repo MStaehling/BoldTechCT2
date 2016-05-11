@@ -1,11 +1,10 @@
-<div class="hero-unit">
-  <h1>{{main.location}}</h1>
-  <p>You now have</p>
+<div class="hero-unit" ng-controller="MainController">
+  <h3>Address with Zip Codes</h3>
+  <ul ng-repeat="zip in location">
+    <li>{{zip.formatted_address}}</li>
+  </ul>
+  <h3>Address without Zip Codes</h3>
   <ul>
     <li>HTML5 Boilerplate</li>
-    <li>Sass</li>
-    <li>Modernizr</li>
-    <a ng-click="test()">jQuery</a>
   </ul>
 </div>
-{{dog.pop}}{}

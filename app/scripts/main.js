@@ -2,33 +2,19 @@
   'use strict';
 
   angular.module('boldtech')
-    .controller('MainController', function($http, $scope) {
+    .controller('MainController', function($http, $q, $scope) {
       var vm = this;
+      var defer = $q.defer();
 
-      vm.test = function() {
-        console.log('hi');
-      };
-
-      $scope.dog = {
-        pop: "no"
-      };
-      vm.g = {
-        name: "roger",
-        age: "34"
-      };
-
-      // $http({
-      //   method: 'GET',
-      //   url: 'https://maps.googleapis.com/maps/api/geocode/json?address=orlando'})
-      //   .then(function(response) {
-      //     vm.location = response.data;
-      //     console.log(response.data);
-      //   });
-
-      $.get('https://maps.googleapis.com/maps/api/geocode/json?address=orlando')
+      $http({
+          method: 'GET',
+          url: 'https://maps.googleapis.com/maps/api/geocode/json?address=orlando'
+        })
         .then(function(response) {
-          vm.location = response.data;
-          console.log(response.data);
+          vm.location = response.data.results;
+          console.log(response.data.results);
+          defer.resolve;
         });
+
     });
 })();

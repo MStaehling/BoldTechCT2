@@ -2,13 +2,13 @@
   'use strict';
 
   angular
-    .module('boldtech', ['ngRoute'])
+    .module('boldtech', ['ngRoute', 'restangular'])
     .config(function($routeProvider) {
       $routeProvider
         .when('/home', {
           templateUrl: '/views/main.html'
             controller: 'MainController',
-            controllerAs: 'main'
+          //  controllerAs: 'main'
         })
         .when('/', {
           redirectTo: '/home'

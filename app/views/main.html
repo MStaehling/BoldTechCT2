@@ -1,10 +1,10 @@
 <div class="hero-unit" ng-controller="MainController">
   <h3>Address with Zip Codes</h3>
   <ul ng-repeat="zip in location">
-    <li>{{zip.formatted_address}}</li>
+    <li ng-show="{{zip.address_components.length}} === 5">{{zip.formatted_address}}</li>
   </ul>
   <h3>Address without Zip Codes</h3>
-  <ul>
-    <li>HTML5 Boilerplate</li>
+  <ul ng-repeat="zip in location">
+    <li ng-show="{{zip.address_components.length}} === 4">{{zip.formatted_address}}</li>
   </ul>
 </div>
